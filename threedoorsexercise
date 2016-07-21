@@ -1,0 +1,368 @@
+git onleiMac-de-Beatriz:~ beatrizlopez$ mkdir git-practice
+iMac-de-Beatriz:~ beatrizlopez$ git init
+Reinitialized existing Git repository in /Users/beatrizlopez/.git/
+iMac-de-Beatriz:~ beatrizlopez$ open git-practice
+iMac-de-Beatriz:~ beatrizlopez$ touch three_doors.txt
+iMac-de-Beatriz:~ beatrizlopez$ mv three_doors.txt git-practice/
+iMac-de-Beatriz:~ beatrizlopez$ open git-practice/three_doors.txt
+iMac-de-Beatriz:~ beatrizlopez$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.CFUserTextEncoding
+	.Trash/
+	.adobe/
+	.bash_history
+	.config/
+	.cups/
+	.dropbox/
+	.gitconfig
+	.oracle_jre_usage/
+	.ssh/
+	Adlm/
+	Applications/
+	Desktop/
+	Documents/
+	Downloads/
+	Dropbox (Anterior)/
+	Dropbox/
+	Library/
+	Movies/
+	Music/
+	Pictures/
+	Public/
+	git-practice/
+nothing added to commit but untracked files present (use "git add" to track)
+iMac-de-Beatriz:~ beatrizlopez$ git add git-practice/three_doors.txt
+iMac-de-Beatriz:~ beatrizlopez$ git commit -m "first commit"
+[master 50a95c0] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 git-practice/three_doors.txt
+iMac-de-Beatriz:~ beatrizlopez$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.CFUserTextEncoding
+	.Trash/
+	.adobe/
+	.bash_history
+	.config/
+	.cups/
+	.dropbox/
+	.gitconfig
+	.oracle_jre_usage/
+	.ssh/
+	Adlm/
+	Applications/
+	Desktop/
+	Documents/
+	Downloads/
+	Dropbox (Anterior)/
+	Dropbox/
+	Library/
+	Movies/
+	Music/
+	Pictures/
+	Public/
+
+nothing added to commit but untracked files present (use "git add" to track)
+iMac-de-Beatriz:~ beatrizlopez$ git log
+commit 50a95c0836109feb6849d72d2bbedec33894fe5b
+Author: Victor Fernandez <victor.fernandez.calvo@gmail.com>
+Date:   Tue Jul 12 17:00:02 2016 +0200
+
+    first commit
+
+commit 5c17bbc0dee4de8666cd265f10da9eac39633aa4
+Author: Victor Fernandez <victor.fernandez.calvo@gmail.com>
+Date:   Mon Jul 11 16:19:46 2016 +0200
+
+    Add Readme.txt
+iMac-de-Beatriz:~ beatrizlopez$ git log --oneline
+50a95c0 first commit
+5c17bbc Add Readme.txt
+iMac-de-Beatriz:~ beatrizlopez$ open git-practice/three_doors.txt
+iMac-de-Beatriz:~ beatrizlopez$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   git-practice/three_doors.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.CFUserTextEncoding
+	.Trash/
+	.adobe/
+	.bash_history
+	.config/
+	.cups/
+	.dropbox/
+	.gitconfig
+	.oracle_jre_usage/
+	.ssh/
+	Adlm/
+	Applications/
+	Desktop/
+	Documents/
+	Downloads/
+	Dropbox (Anterior)/
+	Dropbox/
+	Library/
+	Movies/
+	Music/
+	Pictures/
+	Public/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+iMac-de-Beatriz:~ beatrizlopez$ git add git-practice/three_doors.txt
+iMac-de-Beatriz:~ beatrizlopez$ git commit -m "second commit"
+[master 915ee33] second commit
+ 1 file changed, 3 insertions(+)
+iMac-de-Beatriz:~ beatrizlopez$ git log --oneline
+915ee33 second commit
+50a95c0 first commit
+5c17bbc Add Readme.txt
+iMac-de-Beatriz:~ beatrizlopez$ open git-practice/three_doors.txt
+
+Part 2
+
+Last login: Wed Jul 13 13:15:51 on ttys000
+iMac-de-Beatriz:~ beatrizlopez$ git log
+commit 915ee33bd41dc5ad075d8d0925b0c2106b24ec1e
+Author: Victor Fernandez <victor.fernandez.calvo@gmail.com>
+Date:   Tue Jul 12 17:23:33 2016 +0200
+
+    second commit
+
+commit 50a95c0836109feb6849d72d2bbedec33894fe5b
+Author: Victor Fernandez <victor.fernandez.calvo@gmail.com>
+Date:   Tue Jul 12 17:00:02 2016 +0200
+
+    first commit
+
+commit 5c17bbc0dee4de8666cd265f10da9eac39633aa4
+Author: Victor Fernandez <victor.fernandez.calvo@gmail.com>
+Date:   Mon Jul 11 16:19:46 2016 +0200
+
+    Add Readme.txt
+iMac-de-Beatriz:~ beatrizlopez$ diff
+diff: missing operand after `diff'
+diff: Try `diff --help' for more information.
+iMac-de-Beatriz:~ beatrizlopez$ git diff
+diff --git a/Readme.txt b/Readme.txt
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/git-practice/three_doors.txt b/git-practice/three_doors.txt
+index 26d913f..f9d78fe 100644
+--- a/git-practice/three_doors.txt
++++ b/git-practice/three_doors.txt
+@@ -2,3 +2,5 @@ You are in a room with three doors
+ 
+ Which door will you go through?
+ 
++I choose the one with future-sign door
++
+iMac-de-Beatriz:~ beatrizlopez$ open git-practice/first_choice.txt
+iMac-de-Beatriz:~ beatrizlopez$ git log --oneline
+915ee33 second commit
+50a95c0 first commit
+5c17bbc Add Readme.txt
+iMac-de-Beatriz:~ beatrizlopez$ git add git-practice/first_choice.txt 
+iMac-de-Beatriz:~ beatrizlopez$ git commit -m "comment for first choice"
+[master f78d551] comment for first choice
+ 1 file changed, 14 insertions(+)
+ create mode 100644 git-practice/first_choice.txt
+iMac-de-Beatriz:~ beatrizlopez$ git log --oneline
+f78d551 comment for first choice
+915ee33 second commit
+50a95c0 first commit
+5c17bbc Add Readme.txt
+iMac-de-Beatriz:~ beatrizlopez$ git checkout git-practice/three_doors.txt
+iMac-de-Beatriz:~ beatrizlopez$ 
+iMac-de-Beatriz:~ beatrizlopez$ touch second_choice.txt
+iMac-de-Beatriz:~ beatrizlopez$ rm /Users/beatrizlopez/second_choice.txt
+iMac-de-Beatriz:~ beatrizlopez$ touch /Users/beatrizlopez/git-practice/second_choice.txt
+iMac-de-Beatriz:~ beatrizlopez$ open /Users/beatrizlopez/git-practice/second_choice.txt
+iMac-de-Beatriz:~ beatrizlopez$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	deleted:    Readme.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.CFUserTextEncoding
+	.Trash/
+	.adobe/
+	.bash_history
+	.config/
+	.cups/
+	.dropbox/
+	.gitconfig
+	.oracle_jre_usage/
+	.ssh/
+	.viminfo
+	Adlm/
+	Applications/
+	Desktop/
+	Documents/
+	Downloads/
+	Dropbox (Anterior)/
+	Dropbox/
+	IronHack/
+	Library/
+	Movies/
+	Music/
+	Pictures/
+	Public/
+	git-practice/second_choice.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+iMac-de-Beatriz:~ beatrizlopez$ git 
+fatal: Could not switch to '/git-practice/': No such file or directory
+iMac-de-Beatriz:~ beatrizlopez$ git add /Users/beatrizlopez/git-practice/second_choice.txt
+iMac-de-Beatriz:~ beatrizlopez$ git commit /Users/beatrizlopez/git-practice/second_choice.txt
+error: There was a problem with the editor 'vi'.
+Please supply the message using either -m or -F option.
+iMac-de-Beatriz:~ beatrizlopez$ git log 
+commit f78d55146e021dacc0227c27d900990be7df7b26
+Author: Victor Fernandez <victor.fernandez.calvo@gmail.com>
+Date:   Wed Jul 13 13:40:44 2016 +0200
+
+    comment for first choice
+
+commit 915ee33bd41dc5ad075d8d0925b0c2106b24ec1e
+Author: Victor Fernandez <victor.fernandez.calvo@gmail.com>
+Date:   Tue Jul 12 17:23:33 2016 +0200
+
+    second commit
+
+commit 50a95c0836109feb6849d72d2bbedec33894fe5b
+Author: Victor Fernandez <victor.fernandez.calvo@gmail.com>
+Date:   Tue Jul 12 17:00:02 2016 +0200
+
+    first commit
+
+commit 5c17bbc0dee4de8666cd265f10da9eac39633aa4
+Author: Victor Fernandez <victor.fernandez.calvo@gmail.com>
+Date:   Mon Jul 11 16:19:46 2016 +0200
+
+Part 3 
+
+Last login: Wed Jul 13 13:33:32 on ttys000
+iMac-de-Beatriz:~ beatrizlopez$ pwd
+/Users/beatrizlopez
+iMac-de-Beatriz:~ beatrizlopez$ open /Users/beatrizlopez/git-practice
+iMac-de-Beatriz:~ beatrizlopez$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   git-practice/second_choice.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	deleted:    Readme.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.CFUserTextEncoding
+	.Trash/
+	.adobe/
+	.bash_history
+	.config/
+	.cups/
+	.dropbox/
+	.gitconfig
+	.oracle_jre_usage/
+	.ssh/
+	.viminfo
+	Adlm/
+	Applications/
+	Desktop/
+	Documents/
+	Downloads/
+	Dropbox (Anterior)/
+	Dropbox/
+	IronHack/
+	Library/
+	Movies/
+	Music/
+	Pictures/
+	Public/
+
+iMac-de-Beatriz:~ beatrizlopez$ git branch new
+iMac-de-Beatriz:~ beatrizlopez$ git checkout new
+D	Readme.txt
+A	git-practice/second_choice.txt
+Switched to branch 'new'
+iMac-de-Beatriz:~ beatrizlopez$ git status
+On branch new
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   git-practice/second_choice.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	deleted:    Readme.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.CFUserTextEncoding
+	.Trash/
+	.adobe/
+	.bash_history
+	.config/
+	.cups/
+	.dropbox/
+	.gitconfig
+	.oracle_jre_usage/
+	.ssh/
+	.viminfo
+	Adlm/
+	Applications/
+	Desktop/
+	Documents/
+	Downloads/
+	Dropbox (Anterior)/
+	Dropbox/
+	IronHack/
+	Library/
+	Movies/
+	Music/
+	Pictures/
+	Public/
+
+iMac-de-Beatriz:~ beatrizlopez$ git add /git-practice/second_choice.txt
+fatal: Could not switch to '/git-practice/': No such file or directory
+iMac-de-Beatriz:~ beatrizlopez$ git add /Users/beatrizlopez/git-practice/second_choice.txt
+iMac-de-Beatriz:~ beatrizlopez$ open /Users/beatrizlopez/git-practice/second_choice.txt
+iMac-de-Beatriz:~ beatrizlopez$ git commit /Users/beatrizlopez/git-practice/second_choice.txt
+error: There was a problem with the editor 'vi'.
+Please supply the message using either -m or -F option.
+iMac-de-Beatriz:~ beatrizlopez$ -m
+-bash: -m: command not found
+iMac-de-Beatriz:~ beatrizlopez$ git merge new
+Already up-to-date.
+iMac-de-Beatriz:~ beatrizlopez$ 
+
+
+
+
+
+ 
